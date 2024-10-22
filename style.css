@@ -1,3 +1,85 @@
 body {
-  background: blue;
+  font-family: "Arial", sans-serif;
+  background-image: url(weather-background.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+input {
+  width: 60%;
+  border-radius: 20px 0 0 20px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+}
+
+.weather-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.weather-info {
+  font-size: 1rem;
+  color: #333;
+}
+
+.sunnies {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sunnies img {
+  width: 50px;
+}
+
+.sunnies p {
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.forecast {
+  margin-top: 20px;
+}
+
+.day {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #333;
+  padding: 5px 0;
+}
+
+.day span {
+  font-weight: bold;
 }
