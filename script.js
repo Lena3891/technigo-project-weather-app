@@ -1,9 +1,7 @@
-const apiKey = "0e2439860cb2257ed717522bce421b90";
+const apiKey = "1248cd6765f7ac565234fdc71cafe194"; // Ersetzen Sie durch Ihren neuen API-Schlüssel
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
-const cityName = document.getElementById("cityName");
-const temperature = document.getElementById("temperature");
-const description = document.getElementById("description");
+const currentWeather = document.getElementById("currentWeather");
 const sunrise = document.getElementById("sunrise");
 const sunset = document.getElementById("sunset");
 const forecast = document.getElementById("forecast");
@@ -22,11 +20,11 @@ function fetchWeather(city) {
   )
     .then((response) => response.json())
     .then((data) => {
-      cityName.textContent = data.name;
-      temperature.textContent = `${Math.round(data.main.temp)}°C`;
-      description.textContent = data.weather[0].description;
-      sunrise.textContent = `Sunrise: ${formatTime(data.sys.sunrise)}`;
-      sunset.textContent = `Sunset: ${formatTime(data.sys.sunset)}`;
+      currentWeather.textContent = `${
+        data.weather[0].description
+      } | ${Math.round(data.main.temp)}°C`;
+      sunrise.textContent = `sunrise ${formatTime(data.sys.sunrise)}`;
+      sunset.textContent = `sunset ${formatTime(data.sys.sunset)}`;
     })
     .catch((error) => console.error("Error:", error));
 }
@@ -46,12 +44,12 @@ function fetchForecast(city) {
         const icon = day.weather[0].icon;
 
         forecast.innerHTML += `
-                    <div class="forecast-day">
-                        <p>${dayName}</p>
-                        <img src="http://openweathermap.org/img/wn/${icon}.png" alt="weather icon">
-                        <p>${temp}°C</p>
-                    </div>
-                `;
+          <div class="day">
+            <p>${dayName}</p>
+            <img src="http://openweathermap.org/img/wn/${icon}.png" alt="weather icon">
+            <span>${temp}°</span>
+          </div>
+        `;
       }
     })
     .catch((error) => console.error("Error:", error));

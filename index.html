@@ -9,7 +9,8 @@
   <body>
     <div class="container">
       <header>
-        <h1>Weather App ☀️ ☁️ 🌧️ 🌩️ ❄️</h1>
+        <h1>Weather App</h1>
+        <p>☀️ ☁️ 🌧️ 🌩️ ❄️</p>
         <div class="search-bar">
           <input type="text" id="cityInput" placeholder="Enter city name" />
           <button id="searchBtn">Search</button>
@@ -17,26 +18,11 @@
       </header>
       <div class="weather-card">
         <div class="weather-info">
-          <p>Clear | 23°</p>
-          <p>sunrise 08:00</p>
-          <p>sunset 22:30</p>
+          <p id="currentWeather">Clear | 23°</p>
+          <p id="sunrise">sunrise 08:00</p>
+          <p id="sunset">sunset 22:30</p>
         </div>
-        <div class="sunnies">
-          <img src="sunglasses-icon.png" alt="Sunnies Icon" />
-          <p>
-            <strong>Get your sunnies on.</strong><br />Stockholm is looking
-            rather great today.
-          </p>
-        </div>
-        <div class="forecast">
-          <div class="day">mon<span>23°</span></div>
-          <div class="day">tue<span>20°</span></div>
-          <div class="day">wed<span>16°</span></div>
-          <div class="day">thu<span>25°</span></div>
-          <div class="day">fri<span>27°</span></div>
-          <div class="day">sat<span>23°</span></div>
-          <div class="day">sun<span>23°</span></div>
-        </div>
+        <div class="forecast" id="forecast"></div>
       </div>
     </div>
     <script src="script.js"></script>
